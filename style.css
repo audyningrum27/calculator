@@ -1,0 +1,98 @@
+body {
+    background-image: url(flower.jpg);
+    background-size: cover;
+}
+
+h1, h2, p {
+    text-align: left;
+    margin: 0 auto;
+    color: #425B79;
+}
+
+h1 {
+    position: relative;
+    font-family: 'Anton',
+    sans-serif;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    text-align: right;
+    font-family: 'Marck Script', cursive;
+}
+
+p {
+    padding-top: 5px;
+    padding-left: 100px;
+    font-family: 'Marck Script', cursive;
+}
+
+.calculator {
+    text-align: center;
+    margin: 100px auto;
+    width: 320px;
+    height: 500px;
+    font-family: 'Anton',
+    sans-serif;
+    background-color: #D9DEE2;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.calculator-screen {
+    height: 100px;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 45px;
+    border: none;
+    width: 100%;
+    background-color: #D9DEE2;
+    color: #445B77;
+    text-align: right;
+    font-weight: bold;
+}
+
+.calculator-keys {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 320px;
+}
+
+button {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    background-color: #E2C0A3;
+    border-width: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #445B77;
+    outline: none;
+}
+
+.operator, .equal-sign {
+    background-color: #445B77;
+    color: #E2C0A3;
+}
+
+button:hover,
+.operator:hover,
+.equal-sign:hover {
+    background-color: #BCA57D;
+    color: #445B77;
+    cursor: pointer;
+}
+
+button:active,
+.operator:active,
+.equal-sign:active {
+    font-size: 17px;
+}
