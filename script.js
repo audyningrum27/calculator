@@ -5,7 +5,7 @@ const updateScreen = (number) => {
 }
 
 const updateOperator = (operator) => {
-    calculatorScreen.value += operator
+    calculatorScreen.value = operator
 }
 
 const numbers = document.querySelectorAll(".number");
@@ -15,6 +15,9 @@ let calculationOperator = ''
 let currentNumber = ''
 
 const inputNumber = (number) => {
+    if (currentNumber === '00') {
+        currentNumber = ''
+    }
     if (currentNumber === '0') {
         currentNumber = number
     } else {
@@ -43,7 +46,7 @@ const inputOperator = (operator) => {
         prevNumber = currentNumber
     }
     calculationOperator = operator
-    currentNumber = '0'
+    currentNumber = ''
 }
 
 const equalSign = document.querySelector('.equal-sign')
@@ -115,8 +118,14 @@ percen.addEventListener('click', () => {
 
 const back = document.querySelector('.back')
 
+const del = () => {
+    result = ''
+    
+}
+
 back.addEventListener('click', () => {
     updateScreen(
         currentNumber = currentNumber.substr(0, currentNumber.length - 1)
     )
+    del()
 })
