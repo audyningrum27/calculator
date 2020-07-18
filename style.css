@@ -23,7 +23,6 @@ h2 {
 
 p {
     padding-top: 5px;
-    padding-left: 100px;
     font-family: 'Marck Script', cursive;
 }
 
@@ -72,7 +71,7 @@ button {
     margin: 15px;
     background-color: #E2C0A3;
     border-width: 0;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #445B77;
     outline: none;
@@ -94,5 +93,5 @@ button:hover,
 button:active,
 .operator:active,
 .equal-sign:active {
-    font-size: 17px;
+    font-size: 20px;
 }
