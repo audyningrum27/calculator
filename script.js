@@ -1,18 +1,70 @@
 const calculatorScreen = document.querySelector('.calculator-screen')
-
-const updateScreen = (number) => {
-    calculatorScreen.value = number
-}
-
-const updateOperator = (operator) => {
-    calculatorScreen.value = operator
-}
-
-const numbers = document.querySelectorAll(".number");
+let resetCount = 0;
+let conditionalSecondNumber = 0;
+let afterEqual = 0
+let afterEqNewNum = ''
 
 let prevNumber = ''
 let calculationOperator = ''
 let currentNumber = ''
+
+
+const updateScreen = (number) => {
+
+    console.log(`ini value rs = ${resetCount}`)
+    if (resetCount < 2) {
+        calculatorScreen.value = number
+        console.log(calculatorScreen.value)
+    } else if (resetCount === 2) {
+        if (conditionalSecondNumber === 1) {
+            tmp = calculatorScreen.value
+            conditionalSecondNumber = 0
+        } else {
+            tmp
+        }
+        console.log(`this is number in 2 ${number}`)
+        //tmp = calculatorScreen.value
+        console.log(`this is reset2 ${tmp}`)
+        console.log(`this is calc ${calculatorScreen.value}`)
+
+        calculatorScreen.value = tmp + number
+    }
+
+
+}
+
+const updateScreenEqual = (EqNum) => {
+    calculatorScreen.value = EqNum
+    afterEqual = 1
+    console.log(`this is after eq ${afterEqual}`)
+}
+//resetCount = 0 1
+
+const updateOperator = (operator) => {
+    console.log(`ini value = ${resetCount}`)
+    if (resetCount < 2) {
+        console.log("this is reset" + resetCount)
+        if (calculatorScreen.value) {
+            console.log("im here 1")
+            tmp = calculatorScreen.value
+            calculatorScreen.value = tmp + operator
+            conditionalSecondNumber = 1
+        } else {
+            console.log("im here 2")
+            calculatorScreen.value = operator
+        }
+        resetCount = 2
+
+    } else {
+        console.log("im here 3")
+        console.log("this is reset" + resetCount)
+        calculatorScreen.value = operator
+        resetCount = 0
+    }
+
+}
+
+const numbers = document.querySelectorAll(".number");
 
 const inputNumber = (number) => {
     if (currentNumber === '00') {
@@ -20,6 +72,9 @@ const inputNumber = (number) => {
     }
     if (currentNumber === '0') {
         currentNumber = number
+    } else if (afterEqual == 1) {
+        currentNumber = number
+        afterEqual = 0
     } else {
         currentNumber += number
     }
@@ -53,18 +108,18 @@ const equalSign = document.querySelector('.equal-sign')
 
 const calculate = () => {
     let result = ''
-    switch(calculationOperator) {
+    switch (calculationOperator) {
         case '+':
-            result = parseFloat (prevNumber) + parseFloat (currentNumber)
+            result = parseFloat(prevNumber) + parseFloat(currentNumber)
             break
         case '-':
-            result = parseFloat (prevNumber) - parseFloat (currentNumber)
+            result = parseFloat(prevNumber) - parseFloat(currentNumber)
             break
         case '*':
-            result = parseFloat (prevNumber) * parseFloat (currentNumber)
+            result = parseFloat(prevNumber) * parseFloat(currentNumber)
             break
         case '/':
-            result = parseFloat (prevNumber) / parseFloat (currentNumber)
+            result = parseFloat(prevNumber) / parseFloat(currentNumber)
             break
         default:
             return
@@ -75,7 +130,9 @@ const calculate = () => {
 
 equalSign.addEventListener('click', () => {
     calculate()
-    updateScreen(currentNumber)
+    resetCount = 1
+    //updateScreen(currentNumber)
+    updateScreenEqual(currentNumber)
 })
 
 const clearAll = () => {
@@ -99,7 +156,7 @@ decimal.addEventListener('click', (event) => {
 })
 
 const inputDecimal = (dot) => {
-    if(currentNumber.includes('.')) {
+    if (currentNumber.includes('.')) {
         return
     }
     currentNumber += dot
@@ -120,12 +177,15 @@ const back = document.querySelector('.back')
 
 const del = () => {
     result = ''
-    
+
 }
 
 back.addEventListener('click', () => {
+    afterEqual = 0
+    currentNumber = currentNumber.toString()
     updateScreen(
         currentNumber = currentNumber.substr(0, currentNumber.length - 1)
     )
+    console.log(`ini current number after ${currentNumber}`)
     del()
 })
