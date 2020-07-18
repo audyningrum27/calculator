@@ -11,7 +11,7 @@ let currentNumber = ''
 
 const updateScreen = (number) => {
 
-    console.log(`ini value rs = ${resetCount}`)
+    //console.log(`ini value rs = ${resetCount}`)
     if (resetCount < 2) {
         calculatorScreen.value = number
         console.log(calculatorScreen.value)
@@ -22,10 +22,10 @@ const updateScreen = (number) => {
         } else {
             tmp
         }
-        console.log(`this is number in 2 ${number}`)
+        //console.log(`this is number in 2 ${number}`)
         //tmp = calculatorScreen.value
-        console.log(`this is reset2 ${tmp}`)
-        console.log(`this is calc ${calculatorScreen.value}`)
+        //console.log(`this is reset2 ${tmp}`)
+        //console.log(`this is calc ${calculatorScreen.value}`)
 
         calculatorScreen.value = tmp + number
     }
@@ -36,16 +36,16 @@ const updateScreen = (number) => {
 const updateScreenEqual = (EqNum) => {
     calculatorScreen.value = EqNum
     afterEqual = 1
-    console.log(`this is after eq ${afterEqual}`)
+    //console.log(`this is after eq ${afterEqual}`)
 }
 //resetCount = 0 1
 
 const updateOperator = (operator) => {
-    console.log(`ini value = ${resetCount}`)
+    //console.log(`ini value = ${resetCount}`)
     if (resetCount < 2) {
-        console.log("this is reset" + resetCount)
+        //console.log("this is reset" + resetCount)
         if (calculatorScreen.value) {
-            console.log("im here 1")
+            ///console.log("im here 1")
             tmp = calculatorScreen.value
             calculatorScreen.value = tmp + operator
             conditionalSecondNumber = 1
@@ -56,8 +56,8 @@ const updateOperator = (operator) => {
         resetCount = 2
 
     } else {
-        console.log("im here 3")
-        console.log("this is reset" + resetCount)
+        //console.log("im here 3")
+        //console.log("this is reset" + resetCount)
         calculatorScreen.value = operator
         resetCount = 0
     }
@@ -186,6 +186,6 @@ back.addEventListener('click', () => {
     updateScreen(
         currentNumber = currentNumber.substr(0, currentNumber.length - 1)
     )
-    console.log(`ini current number after ${currentNumber}`)
+    //console.log(`ini current number after ${currentNumber}`)
     del()
 })
