@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Marck+Script&display=swap" rel="stylesheet">
 </head>
@@ -13,41 +14,41 @@
         <p>Kelas C</p>
     </div>
     <div class="calculator">
-        <input type="text" value="0" disabled class="calculator-screen">
+        <input type="text" value="" disabled class="calculator-screen">
         <div class="calculator-keys">
             <div class="row">
-                <button id="AC" class="all-clear">AC</button>
-                <button id="back" class="back"><</button>
-                <button id="%" class="percentage">%</button>
-                <button id="/" class="operator" value="/">&divide;</button>
+                <button class="all-clear">C</button>
+                <button class="back"><i class="fa fa-caret-square-o-left" aria-hidden="true"></i></button>
+                <button class="percentage">%</button>
+                <button class="operator" value="/">&divide;</button>
             </div>
 
             <div class="row">
-                <button id="7" class="number" value="7">7</button>
-                <button id="8" class="number" value="8">8</button>
-                <button id="9" class="number" value="9">9</button>
-                <button id="*" class="operator" value="*">&times;</button>
+                <button class="number" value="7">7</button>
+                <button class="number" value="8">8</button>
+                <button class="number" value="9">9</button>
+                <button class="operator" value="*">&times;</button>
             </div>
 
             <div class="row">
-                <button id="4" class="number" value="4">4</button>
-                <button id="5" class="number" value="5">5</button>
-                <button id="6" class="number" value="6">6</button>
-                <button id="-" class="operator" value="-">-</button>
+                <button class="number" value="4">4</button>
+                <button class="number" value="5">5</button>
+                <button class="number" value="6">6</button>
+                <button class="operator" value="-">-</button>
             </div>
 
             <div class="row">
-                <button id="1" class="number" value="1">1</button>
-                <button id="2" class="number" value="2">2</button>
-                <button id="3" class="number" value="3">3</button>
-                <button id="+" class="operator" value="+">+</button>
+                <button class="number" value="1">1</button>
+                <button class="number" value="2">2</button>
+                <button class="number" value="3">3</button>
+                <button class="operator" value="+">+</button>
             </div>
 
             <div class="row">
-                <button id="0" class="number" value="0">0</button>
-                <button id="00" class="number" value="00">00</button>
-                <button id="." class="decimal" value=".">.</button>
-                <button id="=" class="equal-sign">=</button>
+                <button class="number" value="0">0</button>
+                <button class="number" value="00">00</button>
+                <button class="decimal" value=".">.</button>
+                <button class="equal-sign">=</button>
             </div>
         </div>
     </div>
