@@ -2,7 +2,6 @@ const calculatorScreen = document.querySelector('.calculator-screen')
 let resetCount = 0;
 let conditionalSecondNumber = 0;
 let afterEqual = 0
-let afterEqNewNum = ''
 
 let prevNumber = ''
 let calculationOperator = ''
@@ -145,7 +144,8 @@ const clearBtn = document.querySelector('.all-clear')
 
 clearBtn.addEventListener('click', () => {
     clearAll()
-    updateScreen(currentNumber)
+    resetCount = 1
+    updateScreenEqual(currentNumber)
 })
 
 const decimal = document.querySelector('.decimal')
