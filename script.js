@@ -13,7 +13,7 @@ const updateScreen = (number) => {
     //console.log(`ini value rs = ${resetCount}`)
     if (resetCount < 2) {
         calculatorScreen.value = number
-        console.log(calculatorScreen.value)
+        //console.log(calculatorScreen.value)
     } else if (resetCount === 2) {
         if (conditionalSecondNumber === 1) {
             tmp = calculatorScreen.value
@@ -32,11 +32,6 @@ const updateScreen = (number) => {
 
 }
 
-const updateScreenEqual = (EqNum) => {
-    calculatorScreen.value = EqNum
-    afterEqual = 1
-    //console.log(`this is after eq ${afterEqual}`)
-}
 //resetCount = 0 1
 
 const updateOperator = (operator) => {
@@ -44,12 +39,12 @@ const updateOperator = (operator) => {
     if (resetCount < 2) {
         //console.log("this is reset" + resetCount)
         if (calculatorScreen.value) {
-            ///console.log("im here 1")
+            //console.log("im here 1")
             tmp = calculatorScreen.value
             calculatorScreen.value = tmp + operator
             conditionalSecondNumber = 1
         } else {
-            console.log("im here 2")
+            //console.log("im here 2")
             calculatorScreen.value = operator
         }
         resetCount = 2
@@ -114,7 +109,7 @@ const calculate = () => {
         case '-':
             result = parseFloat(prevNumber) - parseFloat(currentNumber)
             break
-        case '*':
+        case 'x':
             result = parseFloat(prevNumber) * parseFloat(currentNumber)
             break
         case '/':
@@ -125,6 +120,12 @@ const calculate = () => {
     }
     currentNumber = result
     calculationOperator = ''
+}
+
+const updateScreenEqual = (EqNum) => {
+    calculatorScreen.value = EqNum
+    afterEqual = 1
+    //console.log(`this is after eq ${afterEqual}`)
 }
 
 equalSign.addEventListener('click', () => {
@@ -175,17 +176,12 @@ percen.addEventListener('click', () => {
 
 const back = document.querySelector('.back')
 
-const del = () => {
-    result = ''
-
-}
-
 back.addEventListener('click', () => {
     afterEqual = 0
+    conditionalSecondNumber = 0
     currentNumber = currentNumber.toString()
     updateScreen(
         currentNumber = currentNumber.substr(0, currentNumber.length - 1)
     )
     //console.log(`ini current number after ${currentNumber}`)
-    del()
 })
